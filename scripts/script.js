@@ -12,9 +12,10 @@ generateButton.disabled = true;
 
 let attempts = 0;
 let maxAttempts = 3;
+let userName;
 
 function beginGame(){
-    let userName = prompt("Введіть своє ім\'я:");
+    userName = prompt("Введіть своє ім\'я:");
     slot1.src = "Resources/bg.png";
     slot2.src = "Resources/bg.png";  
     slot3.src = "Resources/bg.png";
@@ -44,7 +45,7 @@ function spinSlots() {
     slot2.src = "Resources/" + randomSymbols[1]+".png";  
     slot3.src = "Resources/" + randomSymbols[2]+".png";
 
-    if (randomSymbols[0] === randomSymbols[1] && randomSymbols[1] === randomSymbols[2]) {    
+    if ((randomSymbols[0] == randomSymbols[1]) && (randomSymbols[1] == randomSymbols[2])) {    
         generateButton.disabled = true;
         result.textContent = "Перемагає " + userName + "!";
         setTimeout(restartGame, 2000);
